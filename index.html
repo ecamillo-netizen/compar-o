@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparações</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .linha {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+        }
+
+        .operador {
+            width: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button {
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="linha">
+        <input type="number" id="a1">
+        <span class="operador">==</span>
+        <input type="number" id="b1">
+        <button onclick="comparar(1, '==')">Comparar</button>
+    </div>
+
+    <div class="linha">
+        <input type="number" id="a2">
+        <span class="operador">!=</span>
+        <input type="number" id="b2">
+        <button onclick="comparar(2, '!=')">Comparar</button>
+    </div>
+
+    <div class="linha">
+        <input type="number" id="a3">
+        <span class="operador">></span>
+        <input type="number" id="b3">
+        <button onclick="comparar(3, '>')">Comparar</button>
+    </div>
+
+    <div class="linha">
+        <input type="number" id="a4">
+        <span class="operador">>=</span>
+        <input type="number" id="b4">
+        <button onclick="comparar(4, '>=')">Comparar</button>
+    </div>
+
+    <div class="linha">
+        <input type="number" id="a5">
+        <span class="operador"><</span>
+        <input type="number" id="b5">
+        <button onclick="comparar(5, '<')">Comparar</button>
+    </div>
+
+    <div class="linha">
+        <input type="number" id="a6">
+        <span class="operador"><=</span>
+        <input type="number" id="b6">
+        <button onclick="comparar(6, '<=')">Comparar</button>
+    </div>
+
+
+    <script>
+        function comparar(linha, operador) {
+
+            let valor1 = Number(document.getElementById("a" + linha).value);
+            let valor2 = Number(document.getElementById("b" + linha).value);
+
+            let resultado;
+
+            switch (operador) {
+
+                case "==":
+                    resultado = valor1 == valor2;
+                    break;
+
+                case "!=":
+                    resultado = valor1 != valor2;
+                    break;
+
+                case ">":
+                    resultado = valor1 > valor2;
+                    break;
+
+                case ">=":
+                    resultado = valor1 >= valor2;
+                    break;
+
+                case "<":
+                    resultado = valor1 < valor2;
+                    break;
+
+                case "<=":
+                    resultado = valor1 <= valor2;
+                    break;
+            }
+
+            alert(resultado ? "VERDADEIRO" : "FALSO");
+        }
+    </script>
+
+</body>
+</html>
